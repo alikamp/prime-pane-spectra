@@ -1,8 +1,32 @@
 # prime-pane-spectra
 
-Geometric constructions that read arithmetic off overlaid lattices of primes — and a record of the three that worked, the two that didn't, and the one result that had to be retracted.
+Put the primes on a pane of glass. Lay a second pane on top. Slide them
+against each other and watch what happens to the light.
 
-The organizing question: if you put primes on transparent coordinate grids and slide one against the other, what do you see? There are three ways to slide, they turn out to be the three one-parameter subgroups of SL(2,ℝ), and they reach three different arithmetic objects.
+There are only three ways to slide — turn, scale, shear — and they are the
+three one-parameter subgroups of SL(2,ℝ). Each reaches a different piece of
+arithmetic, and the differences are stark. **Turn** the panes and you find the
+lattice and nothing else: at the Pythagorean angles the primes snap into
+coincidence, 568 exact hits where a generic angle gives zero, and every bit of
+it dissolves into the fact that primes are odd. **Scale** them instead — set
+the primes on a logarithmic spiral, where turning and growing become the same
+gesture — and the interference pattern is the Riemann zeros, all thirteen
+below *t* = 60, most to four decimal places. **Shear** them and you are
+counting prime pairs, the departure angle selecting which gap you count,
+Hardy–Littlewood setting the brightness. Half of all angles go dark: the
+parity obstruction, visible to the eye.
+
+Then change the ring. On ℤ² the angle of a lattice point carries nothing,
+which is why turning the panes found only parity. On ℤ[i] the angle of a prime
+carries an entire tower of *L*-functions — one for every Hecke
+Grossencharacter — and the same construction reads them off the geometry.
+Weight by ξ₀ and the Riemann zeros arrive interleaved with the zeros of
+*L*(*s*, χ₄), including a pair 0.43 apart resolved separately. Weight by ξ₁
+and a weight-5 modular form's zeros appear instead. Weight by ξ₂ and they are
+replaced again.
+
+None of this is new mathematics. All of it is visible in a few seconds of
+compute.
 
 | pane motion | subgroup | reaches | outcome |
 | --- | --- | --- | --- |
@@ -122,9 +146,21 @@ python3 src/interval_test.py sweep_1e11.json            # the decisive test
 
 ---
 
-## What this is not
+## A closing note
 
-It does not find, predict or generate primes, and no extension of it does. Every quantity is a count over a range, and resolving a prime *r* needs on the order of *r*² prime pairs already in hand — the method consumes primes. The spectral route to locating primes near *x* needs roughly *x* zeta zeros, costing *O*(*x*^1.5) against *O*(*x* log log *x*) for a sieve, and no choice of angle moves that exponent.
+The explicit formula is Riemann's, from 1859; the singular series is Hardy and
+Littlewood's, from 1923; the zeros reproduced here sit in a public catalogue
+anyone can check, and I checked them. Nothing in this repository extends that
+mathematics by a single theorem. But there is a real difference between
+reading that the primes carry a spectrum and watching it resolve on your own
+machine — seeing a frequency you did not put in rise cleanly out of a sum over
+prime angles, land on 6.0209, and stay there as you push the sieve further.
+The primes stop reading as static scattered along a line and start reading as
+what the mathematics has always said they are: nodes in a resonant structure,
+with geometry and arithmetic as two views of one object. The instrument that
+shows this is small. It fits in ten files, runs on two cores, and every claim
+it makes is checked against something computed independently. It is pointed at
+ℤ and ℤ[i] because those are the rings I reached for. Point it somewhere else.
 
 ## License
 
