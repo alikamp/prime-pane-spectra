@@ -25,7 +25,7 @@ Weight by ξ₀ and the Riemann zeros arrive interleaved with the zeros of
 and a weight-5 modular form's zeros appear instead. Weight by ξ₂ and they are
 replaced again.
 
-None of this is new mathematics. All of it is visible in a few seconds of
+All of it is visible in a few seconds of
 compute.
 
 | pane motion | subgroup | reaches | outcome |
